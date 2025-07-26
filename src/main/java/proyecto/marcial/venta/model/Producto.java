@@ -50,6 +50,14 @@ public class Producto {
 		this.precio = precio;
 		this.estadoProducto = estadoProducto;
 	}
+	
+
+
+	@Override
+	public String toString() {
+		return "Producto [codigo=" + codigo + ", nombre=" + nombre + ", descripcion=" + descripcion + ", precio="
+				+ precio + ", estadoProducto=" + estadoProducto + "]";
+	}
 
 
 	public Integer getCodigo() {

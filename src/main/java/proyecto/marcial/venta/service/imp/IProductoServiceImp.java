@@ -27,6 +27,7 @@ public class IProductoServiceImp implements IProductoService{
 	@Override
 	public List<Producto> obtenerProductos() {
 		// TODO Auto-generated method stub
+		System.out.println(prodDAO.findAll().size());
 		return prodDAO.findAll();
 	}
 

@@ -5,13 +5,18 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import proyecto.marcial.venta.model.Color;
 import proyecto.marcial.venta.model.Producto;
+import proyecto.marcial.venta.repository.IColorDAO;
 import proyecto.marcial.venta.repository.IProductoDAO;
 import proyecto.marcial.venta.service.IProductoService;
 
 @Service
 public class IProductoServiceImp implements IProductoService{
 
+	@Autowired
+	IColorDAO colorDAO;
+	
 	@Autowired 
 	IProductoDAO prodDAO;
 	
@@ -38,9 +43,22 @@ public class IProductoServiceImp implements IProductoService{
 	}
 
 	@Override
+	public Producto modificarProducto(Producto prodModificado) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	@Override
 	public void eliminarProducto(Producto prodEliminar) {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public List<Color> obtenerColores() {
+		// TODO Auto-generated method stub
+		return colorDAO.findAll();
+	}
+
 
 }

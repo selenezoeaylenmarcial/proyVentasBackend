@@ -6,15 +6,13 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import proyecto.marcial.venta.model.Color;
 import proyecto.marcial.venta.model.Producto;
 
-
 @Repository
-public interface IProductoDAO extends CrudRepository<Producto, Integer>{
+public interface IColorDAO extends CrudRepository<Color, String>{
+	
+	@Query("from Color c order by c.codigo")
+	public List<Color> findAll();
 
-	@Query("from Producto p order by p.codigo")
-	public List<Producto> findAll();
-	
-	public Producto findByCodigo(Integer codigo);
-	
 }

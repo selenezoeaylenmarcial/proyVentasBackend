@@ -12,9 +12,6 @@ import proyecto.marcial.venta.service.IProductoService;
 
 @SpringBootApplication
 public class ProyVentaApplication implements CommandLineRunner{
-
-	@Autowired
-	ProductoController prodCon;
 	
 	@Autowired
 	IProductoService prodService;
@@ -41,11 +38,8 @@ public class ProyVentaApplication implements CommandLineRunner{
 		prodService.guardarProducto(prod); 
 		
 		System.out.println(
-				"Resultado :" + prodCon.verProductos() +
-				" Hay productos: " + prodService.obtenerProductos().toString()); 
+				" Hay productos: " + prodService.obtenerProductos()); 
 		*/
-		
-		
 	}
 
 }

@@ -8,9 +8,12 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import proyecto.marcial.venta.model.Color;
 import proyecto.marcial.venta.model.Producto;
 import proyecto.marcial.venta.service.IProductoService;
 
@@ -43,9 +46,22 @@ public class ProductoController {
 	@GetMapping("/ver/{cod}")
 	public Producto verProducto(@PathVariable Integer cod) {
 		
-		System.out.println("producto encontrad");
+		System.out.println("producto encontrado");
 		
 		return prodService.buscarProducto(cod);
+	}
+	
+	@PutMapping("/{cod}")
+	public Producto modificarProducto(@PathVariable Integer cod, @RequestBody Producto producto) {
+		return null;
 		
 	}
+	
+	@GetMapping("/colores")
+	public List<Color> verColores(){
+		
+		return prodService.obtenerColores();
+	}
+	
+	
 }
